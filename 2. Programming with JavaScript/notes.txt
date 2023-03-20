@@ -1,1 +1,678 @@
+WEEK 1:
+
+	Welcome to programming:
+		
+		var myVar = "foo";
+		console.log("My new variable" + myVar)
+		// My new variablefoo
+		console.log("My new variable" , myVar)
+		// My new variable foo
+		
+		util.format()
+			console.log("%cHello World", "color: blue; font-size: 40px");
+			// Here %c, specifier is ignored and will skip any CSS passed in.
+			
+			Note: Read more: https://nodejs.org/api/util.html#utilformatformat-args
+			
+			
+		Data types:
+			1. Primitive :- Number, String, Boolean, null, Undefined, Symbols, bigint
+				- All primitives are immutable.
+				- undefined indicates the absence of a value. 
+					//typeof(undefined)  is undefined
+					undefined is a normal identifier
+				- null indicates the absence of an object.  
+					//typeof(null)  is object
+					null is a keyword
+				- Symbols and bigint was introduced in ES6
+					symbols: Ex: having multiple boxes with the same label and using different serial numbers to avoid mixing them up.
+					bigint: Larger capacity to hold numbers. same as number datatype.
+			
+			2. Non-Primitive :- Objects
+									objects, arrays
+			
+			Note: Read more on undefined & null : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+			Note: Readmore on Primitive datatype : https://developer.mozilla.org/en-US/docs/Glossary/Primitive
+			
+		Note:
+			=== The strict equality operator which is three equal signs is used to check for value and type.  //5 === "5"  is false
+			==  comparison operators / equality operator   //5 == "5"  is true
+			=   assignment
+			
+		Note:
+			What will be the result of 1 + "2"?
+				Note that the value of 1 is of the number data type, 
+				and the value of "2" is of the string data type, 
+				and so JavaScript will coerce the number 1 to a string of "1", 
+				and then concatenate it with the string of "2", so the result is a string of "12".
+			
+			what is the output of 10 + 20 + "RE";
+				//30RE
+			What is the ooutputof "RE" + 10 + 20
+				//RE1020
+		
+		Note: Concatinating string using +=
+			var longString = "Once";
+				longString += " upon";
+				longString += " a";
+				longString += " time";
+				console.log(longString)  //Once upon a time
+				
+		Note:
+			true == 1       //true.`because here true` value is coerced to `1`
+			true === 1    	//false because here true datatype is boolean wherein 1 is number datatype
+			3 > 2 > 1    	//false, here first it check 3 > 2 which evaluate's to true, then true > 1 (`true` value is coerced to `1`)which is like 1 > 1 which is false
+			3 > 2 > 0   	//true  (3>2)--true, then true is changed to '1'. now (1>0)---true.
+			3 < 2 < 1		//true  (3<2)--false, then false is changed to '0' now (0<1)---true.
+			3 < 2 > 1 		//false (3<2)--false, then falses is changed to '0' now (0>1)---false.
+			3 < 2 < true     //true
+			false < true 	//true (0<1)--true
+			
+
+		History of JavaScript:
+			- Developed by Brendan Eich in 1995, in 10 days.
+			- Started as simple scripting language for version 2 of Netscape browser.
+			- In 1996 Netscape made a deal with the organization known as ECMA (European Computer Manufacturers Association) 
+				to draft the specification of the JavaScript language, and in 1997 the first edition of the ECMAScript specification was published.
+			- ECMA publishes this specification as the ECMA-262 standard.
+			- To run javascrit we need javascrit engine.
+			- JavaScript engine is a building block of browser.
+			- Developers write JavaScript code so that they can "talk to" a JavaScript engine in order to interact with browser.
+			- Thus, the code that you write in the JavaScript programming language allows you to: 
+				1. Interact with the JavaScript engine inside of the browser 
+				2. Interact with other browser functionality that exists outside of the JavaScript engine, but is still inside the browser.
+			- Limited to browser was changed in 2009 when Node.js was introduced, which led to use javascrit on the browser, on servers, on any device that can run a JavaScript engine.	
+		
+		
+		Note:
+			Mozilla Developer Network Expressions and Operators 
+				https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators
+			Mozilla Developer Network Operator Precedence and Associativity 
+				https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+			JavaScript Primitive Values 
+				https://developer.mozilla.org/en-US/docs/Glossary/Primitive
+			ECMA262 Specification 
+				https://tc39.es/ecma262/
+			jQuery Official Website 
+				https://jquery.com/
+			React Official Website 
+				https://reactjs.org/
+			StackOverflow Developer Survey 2021 Most Popular Technologies
+				https://insights.stackoverflow.com/survey/2021#technology-most-popular-technologies
+			Emojis
+				http://unicode.org/emoji/charts/full-emoji-list.html#1f600
+			Conditional (ternary) operator
+				https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+				
+
+WEEK 2:
+	
+	Note: 
+		JavaScript built-in Math object:
+			Math.ceil() - rounds up to the closest integer 
+			Math.floor() - rounds down to the closest integer 
+			Math.round() - rounds up to the closest integer if the decimal is .5 or above; otherwise, rounds down to the closest integer 
+			Math.trunc() - trims the decimal, leaving only the integer
+	Note:
+		The string values can be joined with a plus operator, or by using the concat method.
+		console.log("Hello" + " World")   //Hello World
+		console.log("Hello".concat("World"))   //Hello World
+		
+	Note: 
+		"Hello".charAt(1) //e
+		"Wo".concat("rl")  //"World"
+		"Hello".indexOf(e) //1
+		"Hello-World".split("-")  //["Hello", "World"]
+		
+	Note:
+		Method in javascrit is  a function which is associated with an object.
+		var car ={
+				name: "BMW",
+				color: "Blue",
+				startEngine: function(){
+						console.log("Engine started.");
+					}
+			}
+			//here car is an object and startEngine function is method
+			//It's important to remember that when the JavaScript engine runs this line of code, 
+				//it locates the car object in its memory. Then, it finds the startEngine method on the car object. 
+					//It reads the function declaration that's saved on this property and runs it, line by line.
+		
+	Note:
+		typeof([1, 2, 3]) ---- object
+		type({a:"A", b:"B"})  --- object
+		typeof(1 > 2)  --- boolean
+		typeof(function(){console.log("hello")}) --- function
+	
+
+	Error Handling:
+		Note:
+			Bug: When a bug happens, our program keeps running, but it behaves in a way we didn't intend. 
+			Error: When an error happens, our program stops running as the result of an error.
+			
+		Types of errors: 
+			Syntax error: SyntaxError occurs when you write a piece of code that JavaScript cannot read.
+				//var newString = "Hello;   //no ending quotation mark
+			Type error: 5.pop()  //trying array method .pop() on a number
+			Reference error: this error occurs when value is not defined.
+				console.log(a)   //where a is not defined in  our program.
+			Range error:
+			
+		Note: convert decimal to binary
+			Ex: decimal 10 to binary
+				(10).toString(2)  //1010
+			Ex: decimal 10 to octal
+				(10).toString(8)  //12
+		
+		Try catch:
+			Note: The try catch statement keeps a program running when it encounters an error.
+			Note: There's an interesting caveat /warning regarding the SyntaxError in JavaScript: it cannot be caught using the try-catch block.  
+			Note: You cannot handle SyntaxErrors in JavaScript using a try catch block. 
+			Ex: if we have a code like this 
+				console.log(a);
+				console.log("Program has reached end.");
+				
+				here our code doesnt reach the second line of the code as the first line give an referenceError.
+				so to handle this we can use try catch method to catch an error which might occur and run rest of our code.
+			
+			syntax:
+				try {
+					//Any code which you think might error out.
+					console.log(a);
+				} 
+				catch(error){
+					// catch block is ran only when we have error when running try block.
+					console.log(error);
+				}
+				//this block of code is ran irrespective whether there was an error or not in try block
+				console.log("Program has reached end.");
+			
+			Ex: if we want we can invoke throwing error by ourself using throw keyword.
+				
+				try {
+					//simply throw syntax error, with custom error message "This is an custom error message." which later will be caught in catch block 
+					throw new SyntaxError("This is an custom error message.");
+				}
+				catch(error) {
+					console.log(error);
+				}
+				console.log("Programhas reached end.");
+				
+		Note: 3 types of empty values 
+				Null: Intentional absence of object value.
+					ex: var letter = "hello";
+						letter.match("e")  //["e", index:1, ....] .here an letter "e" was found so it was able to build an array and log the output.
+						
+						letter.match("a")  //null   .here a letter "a" was not able to locate, so an array was not able to form,so o/p returns null.  
+			
+				Undefined: undefined datatype acts like a placeholder for a value that the JavaScript engine knows to exist. It just has not been specified. 
+						var food;
+						console.log(food);  //undefined
+						//When declared with 'var', an unassigned variable will be initialized with the value 'undefined'.
+						
+						var travel= {
+							place: "Europe",
+						}
+						
+						console.log(travel.PLACE)  //undefined
+						
+						Note: var food;
+								console.log(food);     //undefined
+								console.log(sleep);    //referenceError because here sleep is not initialized in our program.
+				
+				Empty string: var newEmptyString = "";
+			
+		Note: 
+			Ex:1 
+				var result = null;
+				console.log(result);   //null   Since the value is initialised with null, null will be output.
+			
+			Ex:2
+				If you pass an unsupported data type to a function, what error will be thrown?
+					TypeError will be thrown when an incorrect data type is passed to a function.
+			
+			Ex:3 What will print out when the following code runs?
+				throw new Error();
+				console.log("Hello");
+				
+				Nothing will print out. Throwing an error will stop the execution of the code.
+				
+			Ex:4 What will be the output of running the following code?  
+				try {
+					console.log('hello)
+				} catch(e) {
+					console.log('caught')
+				}
+				
+				Uncaught SyntaxError: Invalid or unexpected token.
+					//because we cannot handle SyntaxErrors in JavaScript using a try catch block.  
+					
+			Ex:5 When the following code runs, what will print out?
+					try {
+						throw new Error();
+						console.log('Hello');
+					} catch(err) {
+						console.log('Goodbye');
+					}
+					
+					Goodbye  //When the error is thrown, the code will execute the code inside the catch statement.
+					
+			Ex:6 If you mis-type some code in your JavaScript, what kind of error will that result in?
+					SyntaxError
+					
+			Ex:7 What will be the output of the following code?	
+					var str = "Hello";
+					str.match("jello");
+				
+				null  //Since the string "Hello" doesn't contain the string "jello", 
+						//it cannot be matched, and thus an array object with the matching result 
+							//cannot be created. Hence, the return value is null, signaling the absence of a matching result.
+			
+			Ex:8 What will be the output of the following code?
+				try {
+					Number(5).toPrecision(300)
+				} catch(e) {
+					console.log("There was an error")
+				}
+				
+				There was an error //The catch block will execute and print because of the Range error.
+							
+							
+		Note: The toPrecision() method returns a string representing the Number object to the specified precision.
+				https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision
+				
+
+WEEK 3:
+	Introduction to Functional Programming:
+	Note: In programming, there are two commonly used paradigms. 
+		Functional programming, sometimes abbreviated as FP, and 
+		object-oriented programming, sometimes abbreviated as OOP. 
+		You can think of these paradigms as different approaches to writing code. 
+		But the result is still the same, instructing a computer to perform a set of operations. 
+		
+	Note: 	Functional programming: data (like variable) can exists outside the function body.
+			Object-oriented programming: Both data and function is packed inside an object.
+			
+	Note: simple recursion function to console.log "hello" 3 times.
+		
+		var count = 3
+		function greetHello(){
+			console.log("Hello");
+			count = count - 1;
+			if (count === 0){
+				return;
+			}
+			greetHello();
+		}
+		
+	Note: scope
+		var newVar = 3;
+		
+		function testFun(){
+			console.log(newVar);  //undefined  (1)
+			var newVar = 6;
+			console.log(newVar);   //6          (2)
+		}
+		
+		testFun();
+		console.log(newVar);   //3             (3)
+		
+	Note: There are actually several styles of coding, also known as paradigms.
+			1. Functional programming FP
+			2. Object-oriented programming OOP
+			
+	Note: First-class function
+		A programming language is said to have First-class functions when functions in that language are treated like any other variable.
+		
+		Ex: 1
+			function name(){
+				return "Amber";
+			}
+			
+			function greetHello(namme){
+				console.log("Hello", namme());
+			}
+			
+			greetHello(name);  //Hello Amber
+			
+			
+		Ex: 2
+			function name(){
+				return "Amber";
+			}
+			
+			function greetHello(namme){
+				console.log("Hello", namme());    //here function is invoked
+			}
+			
+			var userName = name;
+			greetHello(userName);  //Hello Amber
+			
+		Ex: 3
+			function name(){
+				return "Amber";
+			}
+			
+			function greetHello(namme){
+				console.log("Hello", namme);
+			}
+			
+			var userName = name;    //here function "name" is used as a variable to userName
+			greetHello(userName());		//Hello Amber
+			
+	Note:  Higher-order function: 
+			A function that returns a function or takes other functions as arguments is called a higher-order function.
+
+	Note: Callback function: The function that we pass as an argument to another function is called a callback function. Ex: here name() function is a call back function.
+	
+	Note: Important resource:
+		First-class function, Higher-order function, Callback function:
+		https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function
+		
+		Difference between first-class-function-and-high-order-function:
+		https://stackoverflow.com/questions/10141124/any-difference-between-first-class-function-and-high-order-function#:~:text=High%20Order%20Function%20is%20a%20variation%20of%20First%2Dclass%20Function,takes%20other%20functions%20as%20arguments.
+		
+		
+	Note:
+		var: 
+			- Has a global scope.
+			- once assigned can be re- assigned anywhere in our program.
+			- we can use var even without declaring them. var newVar;
+			- console.log(newVar)      //undefined   we need to have "newVar" somewhere in our program, if its there we get undefined else we get "reference error";
+			  var newVar       
+			  
+			  
+		let:
+			- Has a block scope. (if, while, function)
+			- once assigned can be re- assigned anywhere inside block.
+			- we can use let even without declaring them.  Ex: let newLet; 
+			- console.log(newLet)       //will throw "referenceError" , because let needs to be initialised before using them.
+			  let newLet 
+			  console.log(newLet)       //undefined    ,but wont throw error, because let has been initialized before console.log
+			  
+		const:
+			- Has a block scope.
+			- once assigned cannot be re- assigned anywhere in our program.
+			- we cannot use const without declaring them.  Ex: const newConst;     //will throw SyntaxError missing initilizer in const declaration 
+			- console.log(newConst)       //will throw "referenceError" , because const needs to be initialised before using them. 
+			  const newConst  = "myConst"   
+			  console.log(newConst)        //myConst
+			  
+			  
+	Note: 
+		Ex:1 What will print out when the following code runs?
+		    function meal(animal) {
+				animal.food = animal.food + 10;
+			}
+
+			var dog = {
+				food: 10
+			};
+			meal(dog);
+			meal(dog);
+		
+			console.log(dog.food);
+			
+	Introduction to Object-Oriented Programming:
+		Note: The "this" keyword is an alias for the name of the object.
+		
+		var user1 = {
+			name: "Amber",
+			greet: function(){
+					console.log(this);     //{name:"Amber", greet:f}  because this refers to that current object itself.
+					console.log("Hello", this.name)     //Hello Amber
+				}
+		}
+		user1.greet();
+		
+		var user2 = {
+			name: "Chelsea",
+			greet: function(){
+					console.log(this);     //{name:"Chelsea", greet:f}  because this refers to that current object itself.
+					console.log("Hello", this.name)     //Hello Chelsea
+				}
+		}
+		user2.greet();
+		
+		Note: In above 2 examples same greet function twice, so to avoid that we use a template called class.
+		
+		Creating class:
+			- Add a constructor function to accept your parameters.
+				The constructor function assigns passed-in parameters to the future object’s properties.
+			- Build your classes using the “class” keyword.
+				Any class is built using the “class” keyword.
+			- Create an instance of the class using the keyword new and that class' name, 
+			  followed by opening and closing parentheses, and optional arguments, based on how the class itself is defined.	
+				For example, if a class named Car doesn't take any arguments, you'd instantiate it like this: new Car()
+			- We can use method inside a class as regular function. Like passing any parameters etc.
+		Ex: 
+			class User {
+				constructor(namme, countrry){
+					this.name = namme,
+					this.country = countrry
+				}
+				greet(times){
+					for(var i =0; i<times; i++){
+						console.log("Hello", this.name, this.country);
+					}
+					
+				}
+			}
+			
+			var user1 = new User("Amber", "AU");
+			var user2 = new User("Chelsea", "US");
+			
+			user1.name  	//Amber
+			user2.greet(2)  //Hello Chelsea US  is printed twice.
+			
+		
+		Note: Concepts of OOP inheritance, encapsulation, abstraction and polymorphism
+			
+			Inheritance:
+				class Bird {
+					useWings() {
+						console.log("Flying!")
+					}
+				}
+				class Eagle extends Bird {
+					useWings() {
+						super.useWings()    //Flying
+						console.log("Barely flapping!")  //Barely flapping
+					}
+				}
+				class Penguin extends Bird {
+					useWings() {
+						console.log("Diving!")
+					}
+				}
+				var baldEagle = new Eagle();
+				var kingPenguin = new Penguin();
+				baldEagle.useWings(); // "Flying! Barely flapping!"
+				kingPenguin.useWings(); // "Diving!"
+				
+		
+		Note: var newConstrucString = new String("Hello");
+			  var newString = "Hello";
+			  
+			  if (newConstrucString == newString) {
+				console.log(true);
+			  }
+			  
+			  if (newConstrucString === newString) {
+				//
+			  }else {
+				console.log("They are not equal");
+			  }
+			  
+			  console.log(typeof(newConstrucString))  //object
+			  console.log(typeof(newString))   //string;
+			  
+			  console.log(newConstrucString)  //String{"Hello"}
+			  console.log(newString)   //"Hello";
+			
+		
+		Note: Prototype:  In JavaScript, the prototype is an object that can hold properties to be shared by multiple other objects.
+		
+		Note: Holding on to keys and values of an objects:
+				const car2 = {
+					speed: 200,
+					color: "red"
+				}
+				
+				console.log(Object.keys(car2)); // ['speed','color']
+				console.log(Object.values(car2)); // [200,'red']
+				console.log(Object.entries(car2)); // [["speed", 200],["color", "red"]]
+				
+		
+		Note: Strange things about objects:
+		
+			var a = "name";
+			var b = {
+				name: "John"
+			}
+			
+			b[a]  //"John"
+			b["a"]  //undefined
+			b["name"]  //"John"
+			b[name]  //undefined
+			b.name  //"John"
+			b.a     //undefined
+			
+		
+		Note: spread operator:
+			let placesToVisit = ["US", "UK","AU"];
+			
+			function tour(place1, place2, place3){
+				console.log("I will visit " + place1);
+				console.log("I will visit " + place2);
+				console.log("I will visit " + place3);
+			}
+			
+			tour(placesToVisit[0], placesToVisit[1], placesToVisit[2]);
+				//I will vist US
+				//I will vist UK
+				//I will vist AU
+			
+			now using spread operator we need not have to pass any arguments.
+			tour(...placesToVisit);
+				//I will vist US
+				//I will vist UK
+				//I will vist AU
+				
+		Note: Rest operator
+			The rest operator can be used to destructure existing array items, rather than typing them out again.
+			
+			var [place1, ...secondVisit] = placesToVisit;
+			console.log(place1)         // "US"
+			console.log(secondVisit)   //["UK", "AU"]
+			
+			
+		Note:
+			
+    class Cake {
+        constructor(lyr) {
+            this.layers = lyr;
+        }
+
+        getLayers() {
+            return this.layers;
+        }
+    }
+
+    class WeddingCake extends Cake {
+        constructor() {
+            super(2);
+        }
+
+        getLayers() {
+            return super.getLayers() * 5;
+        }
+    }
+
+    var result = new WeddingCake();
+    console.log(result.getLayers());   //10
+	
+	
+	
+	Ex:2
+    class Animal {
+
+    }
+
+    class Dog extends Animal {
+        constructor() {
+            this.noise = "bark";
+        }
+
+        makeNoise() {
+          return this.noise;
+        }
+    }
+
+    class Wolf extends Dog {
+        constructor() {
+            super();
+            this.noise = "growl";
+        }
+    }
+
+    var result = new Wolf();
+    console.log(result.makeNoise());  //growl
+	
+	
+	
+	Ex:3
+	
+    function count(...food) {
+        console.log(food.length)
+    }
+
+    count("Burgers", "Fries", null);  //3
+	The rest operator  ...  allows a function to accept an indefinite amount of parameters. The length property of the  food  variable will return 3 because there were 3 parameters passed to the method call. The value  null  counts as a parameter. Therefore, 3 will be printed out.
+	
+	
+	WEEK 4:
+		Testing:
+			Jest -testing framework for javascrit.
+			
+			Ex: 
+				function stringConcat(srting1, string2) {
+					return string1 + string2;
+				}
+				
+				// jest has "expect" function in which we have to pass function we need to test and has method where we can specify expected result.
+				expect(stringConcat("abc", "def")).toBe("abcdef");
+				expect(stringConcat(1, 2)).toBe(3);
+				
+			
+			Note: When test pass--- we say it as Green; when test fails we say it as Red;
+
+			Note: TDD-  test-driven development First, 
+				You write a failing test, then you write your source code so that the previously failing test now passes.
+				We implement TDD using RED GREEN REFRACTOR cycles,
+					i.e; first fail; then pass that failed; then refactor code and check this is no regression (no accidental bug due to refractor)
+
+			Note: 3 ways to test your application,
+				
+				TESTING					DESCRIPTION								COST					TIME CONSUMING				POPULAR FRAMEWORKS 					
+				End-to-end testing      Test how end user will use your app		Most expensive			Most time consuming			WebdriverJS, Protractor, Cypress
+				Integration testing 	Test integration between 2 modules		Not soo expensive		Not soo time consuming		React testing library, Enzyme
+				Unit testing			Testing a function/ smallest unit 		Most cheap				Inexpensive					Jest,qUnit, mocha
+				
+			Note: javascrit doesnt have inbuilt testing functionallity.
+			Note: Popular tesing framework for JS are, Mocha, karma, qUnit,Jest
+			
+			Note: Jest: Built by Meta
+				Features of Jest:
+					1. Code covering: Jest uses code coverage to measure what percentage of code is covered by tests.
+					2. Mocking: Mocking allows you to separate the code that you are testing from it's related dependencies. 
+								In other words, you can use the mocking features to make sure that your unit testing is stand-alone.
+									sign-on is another framework used only for mocking.
+					3.snapshottesting: same as regression testing
+				
+				Jest lets developers test a range of code types.
+				Jest allows you to easily work with unit tests.
+				
+	
+
 
