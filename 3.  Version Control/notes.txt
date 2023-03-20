@@ -1,1 +1,47 @@
+Version Control:
+	WEEK 1:
+		Note: Some popular version control softwares:
+				Subversion ------CVCS
+				Perforce
+				AWS Code Commit
+				Mercurial     -------DVCS
+				BitKeeper      ------DVCS
+				Git            ------DVCS
+		
 
+		Note: Version control can be 
+				Centralized version(CVCS): Where we have server client model. 
+										   Client needs to pull code from the server
+										   Whenever code is updated by client, client has to make sure it is conneted to server. And push the changes back to server
+										   This means that all operations have to be done using a centralized server.
+										   If the server were down or slow, this would impede(delay) development.
+										   Its like being online.
+				
+				Distributed version(DVCS): Here also we have server client model.
+										   Client needs to pull code from the server.
+										   Once code has been pulled by client, client now can modify without being conneted to server.
+										   Its works as offline mode.
+										   
+		Note: 
+			Continuous Integration >	Continuous Delivery  > 	Continuous Deployment						   
+			
+	
+	WEEK 2:
+		Unix Commands:
+			Note:
+				mkdir -p dir1/dir2          -----this creats directory dir1 and inside that directory create another directory called dir2. this was possiblebecause of -p (parent)flage
+				
+				
+			Note: Redirect:
+				Input Ex: cat < newText1.txt   ----------read from newText1.txt
+				Output Ex: ls -l > newText1.txt   ----------output all files list to newText1.txt
+				Errors  Ex: ls -l 2> newError.txt   ----------output error to newError.txt .It was possible because of "2>"
+				
+				ls -l > newError.txt 2>&1  ---------to print both ouput and error if occurs.
+				
+				input has the less than sign and output has the greater than sign. 
+				
+			
+			Note:Grep stands for global regular expression print.
+					Ex: grep -w wordToSearch fileName.txt      -----here -w flage lets you get the exact match
+	
