@@ -86,8 +86,11 @@ With the terminal pointed at the `jest-testing` directory, run the test script
 cd jest-testing
 npm run test
 ```
-## Result
-![Test pass Screenshot](test_pass_screenshot.png)
-![Test fail Screenshot](test_fail_screenshot.png)
+## Results
+> ### Test pass
+> ![Test pass Screenshot](test_pass_screenshot.png)
+
+> ### Test fail
+> ![Test fail Screenshot](test_fail_screenshot.png)
 
 
