@@ -1,0 +1,104 @@
+Note:
+All the data in React can be divided into props data and states data.
+Props data is data outside the components that it receives and works with but cannot mutate. 
+State data is data inside the components that it controls and can mutate.
+It also helps to think of it like this. 
+The prop data are belongs to the parent that renders the components. The state data belongs to the component itself.
+ 
+Note:
+While passing props helps to manage states, it is like taking a bus and going through each stop before you get off at the end. 
+In comparison, using the context API is like teleporting to your destination instantly. 
+It's a way to bypass the redundant passing of data through multiple levels of components. 
+To set it up, you need to add a piece of code that will be your context provider.
+It's also where the state will be stored. When a component needs to use the state, it becomes a context consumer.
+
+
+/////////////////////////////////////////////////////////////
+Nav-bar using react-router-dom (external package)
+
+Component of different web-page
+
+function Contact() {
+    return  <h1>Contact Little Lemon on this page.</h1>
+}
+export default Contact
+
+import "./App.css";
+import Homepage from "./Homepage";
+import AboutLittleLemon from "./AboutLittleLemon";
+import Contact from "./Contact";
+import { Routes, Route, Link } from "react-router-dom";
+
+function App() {
+  return (
+    <div> 
+	  <nav>
+      <Link to="/" className="nav-item">Homepage</Link>
+      <Link to="/about" className="nav-item">About Little Lemon</Link>
+      <Link to="/contact" className="nav-item">Contact</Link>
+	  </nav>
+      <Routes> 
+        <Route path="/" element={<Homepage />}></Route>
+        <Route path="/about" element={<AboutLittleLemon />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+      </Routes>
+    </div>
+  );
+};
+
+export default App;
+
+////////////////////////////////////////////////////////////////////
+
+To use assets (stylesheet, img, fonts,etc)
+
+Option 1:
+
+import logo from"./assets/logo.png"
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Task: Add an image below</h1>
+      <img src={logo} alt="Logo" />
+    </div>
+  );
+};
+
+export default App;
+
+
+Option 2:
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Task: Add an image below</h1>
+      <img src={require(./assets/logo.png)} alt="Logo" />
+    </div>
+  );
+};
+
+export default App;
+
+
+To embed video
+
+import React from "react";
+import ReactPlayer from "react-player";
+
+const App = () => {
+  return (
+    <div>
+      <MyVideo />
+    </div>
+  );
+};
+
+const MyVideo = () => {
+  return (
+    <ReactPlayer url='https://www.video-url' />
+  );
+};
+
+export default App;
