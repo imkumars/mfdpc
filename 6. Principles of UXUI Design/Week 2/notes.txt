@@ -1,0 +1,9 @@
+A design system is set of reusable pre-made design components and patterns 
+	that can be used to design products at scale, for example, Google's Material Design and IBMs Carbon Design sytem.
+	
+Note:
+	There are two broad methods you can consider to make your users feel comfortable and know where they are at all times. 
+		The first one is content strategy, and the second one is information architecture. 
+		
+		Content Strategy: Content design involves presenting the content on your website in a meaningful way that will promote your products. 
+								It helps to align your client’s business and UX goals and it also assists in aligning your content around your personas and scenarios. 
