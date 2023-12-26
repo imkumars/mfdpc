@@ -1,0 +1,201 @@
+WEEK 1:
+	Notes:
+		R: [Connect with the React community](https://github.com/enaqx/awesome-react#react-community)
+		   [Follow the updates published on the official React Docs blog](https://reactjs.org/blog/2022/06/15/react-labs-what-we-have-been-working-on-june-2022.html)
+		   [React ecosystem resources](https://github.com/enaqx/awesome-react)
+		   
+	Note: Creating React Application: 
+		Method 1: Using npx
+			npx create-react-app my-app
+		
+		Method 2: Using npm
+			npm init react-app my-app
+		
+		R: https://create-react-app.dev/docs/getting-started
+		
+	Note: Connect to remote and push to Github
+		git remote origin <url-of-github-repo.git>
+		git remote -v                -----to verify if remote setup is correct
+		git push origin <main/master>
+		
+		R: https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github
+		
+	Note: Additional plugins for VS code editor
+		R: [This extension provides related JavaScript snippets to help you code faster](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+		R: https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag
+		R: https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces
+		
+	Note: 
+		R: [Guide to components in Figma](https://help.figma.com/hc/en-us/articles/360038662654-Guide-to-components-in-Figma#:~:text=Components%20are%20elements%20you%20can,icons%2C%20layouts%2C%20and%20more) 
+		R: [Youtube playlist Figma components](https://www.youtube.com/playlist?list=PLXDU_eVOJTx5LSjOmeBYMuvaa4UayfMe4)
+		
+		
+WEEK 2:
+	Note: Semantic:
+		Semantic tags give meaning to the content of a webpage or document by indicating the purpose or function of the content.
+			This makes it easier for search engines and screen readers to understand the content and helps improve 
+			the overall accessibility of the webpage or document.
+			Some examples of semantic HTML tags, <h1>, <article>, <header>. 
+				Note: <table> is not a semantic tag.
+				
+	Note: Semantic and non-semantic HTML
+		Semantic HTML:
+			HTML5 tags like <nav>, <header>, <footer> .. should be used which give more meaning about what that html do, insted of using <div> tag.
+		Non-semantic HTML:
+			Using <div> tag for insted of using <nav>, <footer> ..
+			
+	Note: Meta tags and Meta data:
+		Meta tags define metadata about a web page.
+		Meta data: It's data about other data which in this case is data about the web page.
+		The meta element has two attributes, name and content. 
+			The name attribute specifies the name of the metadata and the content attribute specifies the value of the metadata.
+		Meta tages does not have closing tag, they are self closing tags.
+			
+		Ex: 
+			Name:
+				<meta name="author" content="name_of_author" />
+			Language:
+				<meta name="language" content="english" />
+			Charset:
+				 <meta charset="UTF-8" />
+			Description: provides a brief description of the web page 
+				<meta name="description" />
+			Title:
+				<meta name="title" />
+			No translation: tells Google you don’t want to provide an automatic translation for your page if the user uses a different language  
+				<meta name="googlebot" content=”notranslate” /> 
+			Safe rating: specifies the expected audience for your page 
+				<meta name="rating" content="safe for kids">
+			Copyright: specifies a Copyright 
+				<meta name="copyright" content="Copyright 2023">
+			Http-equiv: This field stands for HTTP equivalent, and it’s used to simulate HTTP response headers. 
+				Refresh page:
+					<meta http-equiv="refresh" content="30"/> specifies the duration of the page before it’s considered stale. Refresh after "30 minutes" 
+			Responsive:
+				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	Note: "Role" attribute can be applied to any HTML element. This attribute is to specify what is the perpous of that tag.
+	
+	Note: Open Graph protocol is an internet protocol that was built by Facebook. It's a structured way to describe the content of a web page.
+			Open Graph tags are a subset of meta tags.
+			The Open Graph protocol is a protocol for sharing content on social media platforms. 
+				It allows developers to specify how content should be displayed when shared on social media sites such as Facebook.
+			 specifically responsible for formatting previews to your web app's content when its URLs are shared as links on social media.
+			 Ex: <meta name="og:title" content="One Place Fishing"/>
+				 <meta name="og:description" content="some description here"/>
+				 
+			Read more about Open Graph protocol on https://ogp.me/
+			
+	Note: HTML event attributes use lowercase; React event attributes use camelCase.
+		  HTML event attributes use parentheses; React event attributes don't use parentheses.
+		  
+	Note: <></> are called React Fragments. They are used instead of unnecessary <div></div>
+	
+	Note: The fetch() method is considered a façade function because it is an API to the XHR browser functionality, which exists outside of the JavaScript engine, but is still a part of a browser
+	
+	Note: You can load local JSON files in the react project by simply importing them as you do for other JavaScript files. 
+			You need to use the json() method of the response object to parse the data as a JSON object.
+			JSON is ______________.?
+				A file format and a data exchange format 
+				
+	Note: The four major elements to concentrate on while developing an accessible website are outlined in the WCAG (Web Content Accessibility Guidelines)and standards.
+		1. Perceivable
+		2. Operable
+		3. Understandable
+		4. Robust
+		
+		
+		
+		
+	-----------------------------------------------------------------------------------------------------------------
+	Note: 
+		1. The git fetch command creates a local copy from a remote git repository. [False]
+		2. User stories can contain an informal explanation of a website feature written from the perspective of the user using the website or app.
+			User stories assist in documenting helpful information about users, such as the various needs and motivations for using a website or app. 
+		3. Valid Open Graph meta tag are ["og:url", "og: image", "og: title", "og:description"]
+		4. Output of this code,
+			var shoe = {};
+			shoe.type = 'sneaker';
+			shoe.brand = 'Nike';
+			shoe.info = function () { console.log('Nike sneaker') }
+			console.log(shoe.info)  //[Function (anonymous)]
+			
+		5. Object-oriented programming makes use of objects to group related data and functionality. Methods update property values rather than returning new values.
+		6. Important observation,
+			console.log(cat)
+			var cat = "hello";
+			//undefined
+			//undefined
+			//Because the variable cat has been declared using the var keyword at some point in the code there will be no error when trying to print it out.
+			
+			console.log(bat)
+			let bat = "hello";
+			//Uncaught ReferenceError: bat is not defined
+			
+			console.log(mat)
+			const mat = "hello";
+			//Uncaught ReferenceError: bat is not defined
+			
+		7. Which type of component lets the DOM maintain its internal state? [Uncontrolled component]
+		8. What is the default behavior of React rendering?
+			React will recursively re-render all of a component's children when the component renders.
+		9. Which one of the following internet protocols allows you to securely list, send, receive and delete files on a server?
+			[SSH File Transfer Protocol (SFTP)]This works in a similar manner to FTP. SFTP allows for sending the files over the SSH protocol which is secure, whereas FTP is insecure.
+		10. One of the design element principles is balance, what is this principle concerned with? [Ensuring no element empowers another.]
+		11. A ______ contains both tangible and intangible elements like patterns, components, guidelines, and other designer and developer tools. [Design system]
+				Design systems are used by developers and designers and serve as a common language for consistent product and web design.
+		12. Result of this code
+			<div>{true}</div> 	
+			<div />
+			<div></div>
+			<div>{false}</div>
+			<div>{null}</div>
+			<div>{undefined}</div>
+			<div>{true}</div>
+			
+			[All these code render nothing]
+			
+		13. With the git clone command, you can create a local copy of a remote Git repository.
+		14. The og:type tag is used to specify the type of the page, such as website, article or video. This information is used by social media platforms to determine how to display the preview of the shared page.
+		15. The React fragment is the top-level element of the component. React fragments are useful for letting you group lists of children without adding extra nodes to the DOM.
+		16. Uncontrolled components are like standard HTML form inputs. Their values can be accessed through use of the useRef hook.
+		17.  When making your own custom hooks in React the name must start with use.
+		18. text-algin: justify 
+				Spreads the text out and ensures every line is the same width.
+					The justify property is the only alignment property that achieves this.
+		19. In design systems, ______ contain technical and functional documentation and patterns provide recommendations on how to use it.
+				[Component]
+				Components are the functional building blocks while patterns are the blueprint.
+		20. React components return JSX expressions. In these expressions, the content between an opening and closing tag is passed as a unique prop called ______.
+				[children]
+				The tags that enclose this unique prop are the parent tags, so it follows that the contents of this are children.
+		21. Which one of the following is a benefit of Continuous Integration (CI)?
+			Automating integration steps to avoid repetition.
+				Continuous Integration is a great tool for automating builds and tests as part of the Continuous Delivery process.
+		22. Which Git command is used to upload the latest changes to a remote repository?
+				The git push command will push your changes in your local branch to a remote repository.
+		23. When does wireframing happen in the project lifecycle?
+				Wireframing happens early in a product lifestyle, as its primary functions are to help define the information hierarchy of a design and to plan and decide how people will interact with the user interface.
+		24. The git fetch command creates a local copy from a remote git repository. [false]
+				You can create a local copy of a remote Git repository using the git clone command. 
+					The git fetch command is used to download objects and references from a remote repository.
+		25. At which stage of the UX design process are ideas and solutions generated for the identified problem?
+				During this stage of the UX design process ideas are generated through various processes such as brainstorming, mind mapping, sketching, etc.
+		26. In programming, which paradigm separates data and functionality?
+				a. Declarative programming  	[false]
+				b. Imperative programming		[false]
+				c. Object-oriented programming	[false]
+				d. Functional programming		[true]
+					In functional programming data and functionality are kept separate such that something is only computed when data is passed into a function.
+					Object-oriented programming makes use of objects to group related data and functionality. Methods update property values rather than returning new values.
+		27. In React, which hook is available that guarantees object references do not change during re-rendering?
+				[useMemo]
+				The useMemo hook memoizes the returned value from the function passed as the first argument.
+				
+		28. Which one of the following protocols allows you to login and interact with computers remotely?
+				Secure Shell Protocol (SSH)
+				The SSH protocol allows you to securely connect to a computer and run commands as if you were sitting in front of the computer and using its command line interface.
+		29. One of the design element principles is direction, what is this principle concerned with?
+				Guiding the users gaze to different parts of the page.
+					This lets the design control the flow of the page and draw attention to specific parts of the design.
+ 
